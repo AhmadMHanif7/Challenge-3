@@ -48,5 +48,7 @@ You are required to submit the following for review:
 
 ![screenshot](screenshot.png)
 
+Deployed Link: https://ahmadmhanif7.github.io/Challenge-3/
+
 - - -
 © 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
