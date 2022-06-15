@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 //Length of the password
 function getLength(){
-  var numCharacters = window.prompt("How many charaacters in your PASSWORD (8 - 28)");
+  var numCharacters = window.prompt("How many charaacters in your PASSWORD (8 - 128)");
   if (numCharacters < 128 && numCharacters > 8){
     return numCharacters;
   } else {
@@ -16,7 +16,8 @@ const upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "
 const lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const numberAll = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const specialCharacter = ["!", "@", "#", "$", "%", "^", "&", "*", "?"]
-var totalArray = [];
+var totalArray = []; //Empty array
+var passwordArray = []; //Empty array
 
 var numCharacters = getLength();
 console.log(numCharacters); //shows as undefined if incorrect value written in before correct value
@@ -47,6 +48,7 @@ if (selectNum){
  else{
    //pass
  }
+
 //Special Character selection
 var selectSpecial = window.confirm("Special Characters?");
 if (selectSpecial){
@@ -56,8 +58,13 @@ if (selectSpecial){
    //pass
  }
 
-console.log(totalArray);
-
+//Random Number Generator
+randomNum = totalArray.length;
+for (let i = 0; i < numCharacters; i++){
+  passwordArray = passwordArray.concat(totalArray[Math.floor(Math.random()*randomNum)]);
+  // console.log(totalArray[Math.floor(Math.random()*randomNum)]);
+}
+console.log(passwordArray.join(''));
 
 // Write password to the #password input
 function writePassword() {
